@@ -128,9 +128,10 @@ $results_per_page = 6;
 						</tr>
 						<?php
             $i=101;
-            $a="DA/IN/".$i;
+            
 						while($row=mysqli_fetch_array($rs))
 						{
+              $a="DA/IN/".$i;
 						?>
 <tr>
 <td><h1><?php echo $a;?></h1></td>

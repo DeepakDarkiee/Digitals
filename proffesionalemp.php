@@ -71,7 +71,7 @@ ORDER by id DESC";
                  $row= mysqli_num_rows($rs);
                  echo ' <h4 style="font-size:30px;text-align:center;color:white;"><i class="fas fa-user"></i> '.$row.'</h4>';
          ?>
-          <h1 style="color:white;font-size:200%; text-align:center">since 7 days </h1>
+          <h1 style="color:white;font-size:200%; text-align:center">Since 7 days </h1>
 
             </div>
             <!--/.info-box-->
@@ -90,7 +90,7 @@ ORDER by id DESC";
 ORDER by id DESC";
                  $rs=readrecord($qry);
                  $row= mysqli_num_rows($rs);
-                 echo ' <h4 style="font-size:30px;text-align:center;color:white;"><i class="fas fa-user"></i> '.$row.'</h4>';         ?><h2 style="color:white;font-size:200%; text-align:center">since 15 days </h2>
+                 echo ' <h4 style="font-size:30px;text-align:center;color:white;"><i class="fas fa-user"></i> '.$row.'</h4>';         ?><h2 style="color:white;font-size:200%; text-align:center">Since 15 days </h2>
             </div>
             <!--/.info-box-->
           </div>
@@ -108,7 +108,7 @@ ORDER by id DESC";
                  $row= mysqli_num_rows($rs);
                  echo '<h4 style="font-size:30px;text-align:center;" > <i class="fas fa-user" style="color:#1a1a1a"></i>'.$row.'</h4>';
          ?>
-         <h1 style="color:black;font-size:200%; text-align:center">since 30 days </h1>
+         <h1 style="color:black;font-size:200%; text-align:center">Since 30 days </h1>
           </div>
           <!--/.info-box-->
         </div>
@@ -217,7 +217,7 @@ $status="<h3>error to Added</h3>";
     <div class="card-header bg-transparent">
 <div >
     
-      <h3  style="text-align: center;font-size: 25px;">Personal Details</h3>
+      <h3  style="text-align: center;font-size: 25px;">Proffesional Details</h3>
     </div>
     <div class="card-body">
    
@@ -245,11 +245,11 @@ $status="<h3>error to Added</h3>";
             <input type="text" class="form-control" name="sname" id="name-f" placeholder=" School Name"style="font-size:15px;"><br>
           </div>
           <div class="col-sm-6 form-group">
-            <label for="bord">Board:</label>
-            <input type="text" class="form-control" name="sboard" id="name-l" placeholder=" Examination Bord"style="font-size:15px;">
+            <label for="board">Board:</label>
+            <input type="text" class="form-control" name="sboard" id="name-l" placeholder=" Examination Board"style="font-size:15px;">
           </div>
           <div class="col-sm-6 form-group">
-            <label for="percent">percent:</label>
+            <label for="percent">Percent:</label>
             <input type="text" class="form-control" name="spercent" id="name-l" placeholder=" Percent"style="font-size:15px;">
           </div>
           <div class="col-sm-6 form-group">
@@ -281,11 +281,11 @@ $status="<h3>error to Added</h3>";
           </div>
 
           <div class="col-sm-6 form-group">
-            <label for="bord">Bord:</label>
-            <input type="text" class="form-control" name="hsboard" id="name-l" placeholder=" Examination Bord"  style="font-size:15px;">
+            <label for="baord">Baord:</label>
+            <input type="text" class="form-control" name="hsboard" id="name-l" placeholder=" Examination Board"  style="font-size:15px;">
           </div>
           <div class="col-sm-6 form-group">
-            <label for="percent">percent:</label>
+            <label for="percent">Percent:</label>
             <input type="text" class="form-control" name="hspercent" id="name-l" placeholder=" Percent"style="font-size:15px;">
           </div>
           <div class="col-sm-6 form-group">
@@ -311,8 +311,8 @@ $status="<h3>error to Added</h3>";
           </div>
 
             <div class="col-sm-6 form-group">
-            <label for="univercity name">Univercity Name:</label>
-            <input type="text" class="form-control" name="gname" id="name-f" placeholder="  Univercity Name"style="font-size:15px;"><br>
+            <label for="Univercity name">University Name:</label>
+            <input type="text" class="form-control" name="gname" id="name-f" placeholder="  University Name"style="font-size:15px;"><br>
           </div>
           <div class="col-sm-6 form-group">
             <label for="degree">Degree:</label>
@@ -345,8 +345,8 @@ $status="<h3>error to Added</h3>";
           </div>
 
            <div class="col-sm-6 form-group">
-            <label for="univercity name">Univercity Name:</label>
-            <input type="text" class="form-control" name="pgname" id="name-f" placeholder="Univercity Name" style="font-size:15px;"><br>
+            <label for="univercity name">University Name:</label>
+            <input type="text" class="form-control" name="pgname" id="name-f" placeholder="University Name" style="font-size:15px;"><br>
           </div>
           <div class="col-sm-6 form-group">
             <label for="degree">Degree:</label>

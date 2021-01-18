@@ -10,6 +10,13 @@ header("location:index.php");
 <html lang="en">
 
 <head>
+<script src="sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="sweetalert2.min.js"></script>
+<link rel="stylesheet" href="sweetalert2.min.css">
+
+
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
@@ -71,7 +78,7 @@ ORDER by id DESC";
                  $row= mysqli_num_rows($rs);
                  echo ' <h4 style="font-size:30px;text-align:center;color:white;"><i class="fas fa-user"></i> '.$row.'</h4>';
          ?>
-          <h1 style="color:white;font-size:200%; text-align:center">since 7 days </h1>
+          <h1 style="color:white;font-size:200%; text-align:center">Since 7 days </h1>
 
             </div>
             <!--/.info-box-->
@@ -90,7 +97,7 @@ ORDER by id DESC";
 ORDER by id DESC";
                  $rs=readrecord($qry);
                  $row= mysqli_num_rows($rs);
-                 echo ' <h4 style="font-size:30px;text-align:center;color:white;"><i class="fas fa-user"></i> '.$row.'</h4>';         ?><h2 style="color:white;font-size:200%; text-align:center">since 15 days </h2>
+                 echo ' <h4 style="font-size:30px;text-align:center;color:white;"><i class="fas fa-user"></i> '.$row.'</h4>';         ?><h2 style="color:white;font-size:200%; text-align:center">Since 15 days </h2>
             </div>
             <!--/.info-box-->
           </div>
@@ -108,7 +115,7 @@ ORDER by id DESC";
                  $row= mysqli_num_rows($rs);
                  echo '<h4 style="font-size:30px;text-align:center;" > <i class="fas fa-user" style="color:#1a1a1a"></i>'.$row.'</h4>';
          ?>
-         <h1 style="color:black;font-size:200%; text-align:center">since 30 days </h1>
+         <h1 style="color:black;font-size:200%; text-align:center">Since 30 days </h1>
           </div>
           <!--/.info-box-->
         </div>
@@ -168,6 +175,8 @@ $experiences="";
            $sql = "INSERT INTO skill(skill,position,experience) VALUES('$skills','$positions','$experiences')";  
                 $rs=executequery($sql);
            }
+
+           
            ?>
 
       
@@ -180,16 +189,25 @@ $experiences="";
  $qry="insert into companydetail (compname, designation,cont_num, Email, gotdetails, relationships, belongs_department)
  values('$name','$design','$contact','$email','$question','$relationship','$department')";
  $rs=executequery($qry);
- if($rs=="success")
+ if($rs)
  {
- $status="<h3>place Added succssfully</h3>";
+   ?>
+<script type='text/javascript'>
+Swal.fire('<h1> Successfully Inserted</h1>');
+</script>
+   <?php
  }
- else
- {
- $status="<h3>error to Added</h3>";
- }
- }
- ?>
+ else{
+   ?>
+ <script type='text/javascript'>
+     Swal.fire('<h5>Not Inserted</h5>');
+     </script>
+     <?php
+     }
+
+
+    }
+?>
 
 <div class="container-fluid mt--7">
 <div class="row">

@@ -10,6 +10,13 @@ header("location:index.php");
 <html lang="en">
 
 <head>
+
+<script src="sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="sweetalert2.min.js"></script>
+<link rel="stylesheet" href="sweetalert2.min.css">
+
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
@@ -84,8 +91,26 @@ if(isset($_POST["btn1"]))
 //$qry="insert into emppersonaldetail(pfile,`full name`,`mobile no.`, email, `aadhar_number`, pancard, gender, dob,`blood group`, `father name`, `father occupation`, `father num`, address, state, city, pincode) values('gehehe','52uejehj',14242,'ewwtyeye',45667,7788,'gender','dob','bl','fname','occupation',526272,'address','state','city',5252)";
 
 $rs=executequery($qry);
-}
+if($rs)
+ {
+   ?>
+<script type='text/javascript'>
+Swal.fire('<h1> Successfully Inserted</h1>');
+</script>
+   <?php
+ }
+ else{
+   ?>
+ <script type='text/javascript'>
+     Swal.fire('<h5>Not Inserted</h5>');
+     </script>
+     <?php
+     }
+
+
+    }
 ?>
+
         <!-- Today status end -->
         <div class="container-fluid mt--7">
 <div class="row">

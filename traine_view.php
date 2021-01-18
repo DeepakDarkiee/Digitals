@@ -129,9 +129,10 @@ $rs=readrecord($query);
 						</tr>
 						<?php
             $i=101;
-            $a="DS/TR/".$i;
+           
 						while($row=mysqli_fetch_array($rs))
 						{
+              $a="DS/TR/".$i;
 						?>
 <tr>
 <td><h1><?php echo $a;?></h1></td>

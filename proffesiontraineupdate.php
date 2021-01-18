@@ -10,6 +10,12 @@ header("location:index.php");
 <html lang="en">
 
 <head>
+
+<script src="sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="sweetalert2.min.js"></script>
+<link rel="stylesheet" href="sweetalert2.min.css">
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
@@ -209,16 +215,26 @@ $pid=$_GET['Tid'];
  where Tid=$pid";
    
  $rs=executequery($qry);
- if($rs=="success")
+ if($rs)
  {
- $status="<h3>Category Added succssfully</h3>";
+   ?>
+<script type='text/javascript'>
+Swal.fire('<h1> Successfully Updated</h1>');
+</script>
+   <?php
  }
- else
- {
- $status="<h3>error to Added</h3>";
- }  
-}
+ else{
+   ?>
+ <script type='text/javascript'>
+     Swal.fire('<h5>Not Updated</h5>');
+     </script>
+     <?php
+     }
+
+
+    }
 ?>
+
 <?php
       $pid=$_GET['Tid'];
 $schoolname="";

@@ -130,9 +130,10 @@ if(isset($_POST["submit"]))
 						</tr>
 						<?php
             $i=101;
-            $a="DS/EMP/".$i;
+           
 						while($row=mysqli_fetch_array($rs))
 						{
+              $a="DS/EMP/".$i;
 						?>
 <tr>
 <td><h1><?php echo $a;?></h1></td>

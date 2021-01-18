@@ -10,6 +10,12 @@ header("location:index.php");
 <html lang="en">
 
 <head>
+<script src="sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="sweetalert2.min.js"></script>
+<link rel="stylesheet" href="sweetalert2.min.css">
+
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
@@ -80,15 +86,24 @@ extract($_POST);
 $qry="update staffpersonaldetail set `name`='$name',`phone`='$phone', aadhar='$aadhar', role='$role', join_date='$joindate' where sid=$pid";
 $rs=executequery($qry);
 
-if($rs=="success")
-{
-$status="<h3>catagory updated successfully</h3>";
-}
-else
-{
-$status="<h3>error to update</h3>";
-}
-}
+if($rs)
+ {
+   ?>
+<script type='text/javascript'>
+Swal.fire('<h1> Successfully Updated</h1>');
+</script>
+   <?php
+ }
+ else{
+   ?>
+ <script type='text/javascript'>
+     Swal.fire('<h5>Not Updated</h5>');
+     </script>
+     <?php
+     }
+
+
+    }
 ?>
 
       

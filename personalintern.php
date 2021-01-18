@@ -12,6 +12,15 @@ header("location:index.php");
 <html lang="en">
 
 <head>
+
+<script src="sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="sweetalert2.min.js"></script>
+<link rel="stylesheet" href="sweetalert2.min.css">
+
+
+
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
@@ -74,7 +83,7 @@ ORDER by uid DESC";
                  $row= mysqli_num_rows($rs);
                  echo '<h4 style="font-size:30px;text-align:center;color:white;" ><i class="icon_documents_alt"></i> '.$row.'</h4>';
          ?>
-         <h1 style="color:white;font-size:200%; text-align:center">since 7 days </h1>
+         <h1 style="color:white;font-size:200%; text-align:center">Since 7 days </h1>
           </div>
           <!--/.info-box-->
         </div>
@@ -95,7 +104,7 @@ ORDER by uid DESC";
                  $row= mysqli_num_rows($rs);
                  echo '<h4 style="font-size:30px;text-align:center;color:white;" ><i class="icon_documents_alt"></i> '.$row.'</h4>';
          ?>
-<h2 style="color:white;font-size:200%; text-align:center">since 15 days </h2>
+<h2 style="color:white;font-size:200%; text-align:center">Since 15 days </h2>
           </div>
           <!--/.info-box-->
         </div>
@@ -115,7 +124,7 @@ ORDER by uid DESC";
                  $row= mysqli_num_rows($rs);
                  echo '<h4 style="font-size:30px;text-align:center;" > <i class="icon_documents_alt" style="color:#1a1a1a"></i>'.$row.'</h4>';
          ?>
-         <h1 style="color:black;font-size:200%; text-align:center">since 30 days </h1>
+         <h1 style="color:black;font-size:200%; text-align:center">Since 30 days </h1>
           </div>
           <!--/.info-box-->
         </div>
@@ -288,7 +297,7 @@ ORDER by uid DESC";
                           </div>
 
                           <div class="col-sm-6">
-      <label for="choose">Enter Document:</label>
+      <label for="choose">Choose Picture:</label>
 
                             <div class="input-group mb-3">
                             <input type="file" class="form-control" name="file" id="name-l" placeholder=" Document" style="font-size:13px; height:40px;" >

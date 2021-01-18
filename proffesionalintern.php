@@ -10,6 +10,13 @@ header("location:index.php");
 <html lang="en">
 
 <head>
+
+<script src="sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="sweetalert2.min.js"></script>
+<link rel="stylesheet" href="sweetalert2.min.css">
+
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
@@ -70,7 +77,7 @@ ORDER by uid DESC";
                  $row= mysqli_num_rows($rs);
                  echo '<h4 style="font-size:30px;text-align:center;color:white;" ><i class="icon_documents_alt"></i> '.$row.'</h4>';
          ?>
-         <h1 style="color:white;font-size:200%; text-align:center">since 7 days </h1>
+         <h1 style="color:white;font-size:200%; text-align:center">Since 7 days </h1>
           </div>
           <!--/.info-box-->
         </div>
@@ -91,7 +98,7 @@ ORDER by uid DESC";
                  $row= mysqli_num_rows($rs);
                  echo '<h4 style="font-size:30px;text-align:center;color:white;" ><i class="icon_documents_alt"></i> '.$row.'</h4>';
          ?>
-<h2 style="color:white;font-size:200%; text-align:center">since 15 days </h2>
+<h2 style="color:white;font-size:200%; text-align:center">Since 15 days </h2>
           </div>
           <!--/.info-box-->
         </div>
@@ -111,7 +118,7 @@ ORDER by uid DESC";
                  $row= mysqli_num_rows($rs);
                  echo '<h4 style="font-size:30px;text-align:center;" > <i class="icon_documents_alt" style="color:#1a1a1a"></i>'.$row.'</h4>';
          ?>
-         <h1 style="color:black;font-size:200%; text-align:center">since 30 days </h1>
+         <h1 style="color:black;font-size:200%; text-align:center">Since 30 days </h1>
           </div>
           <!--/.info-box-->
         </div>
@@ -169,6 +176,8 @@ if(isset($_POST["btn1"]))
   father_name,father_occupation, father_no, city, state, pin_code, address,Join_date) values('$target_file','$name','$email','$phone',
   '$aadhar_no','$pan_card','$gender','$dob','$bloodgroup','$fathername','$fatheroccu','$fatherno','$city','$state','$pincode','$address','$joindate')";
   $rs=executequery($qry);
+
+  
 if($rs=="success")
 {
   
@@ -218,15 +227,25 @@ $b="jff";
    ,'$target_file3','$odegree','$oname','$opassing','$opercent','$target_file4')";
  
  $rs=executequery($qry);
- if($rs=="success")
+
+ if($rs)
  {
- $status="<h3>Category Added succssfully</h3>";
+   ?>
+<script type='text/javascript'>
+Swal.fire('<h1> Successfully Inserted</h1>');
+</script>
+   <?php
  }
- else
- {
- $status="<h3>error to Added</h3>";
- }  
-}
+ else{
+   ?>
+ <script type='text/javascript'>
+     Swal.fire('<h5>Not Inserted</h5>');
+     </script>
+     <?php
+     }
+
+
+    }
 ?>
 
 <div class="container-fluid mt--7"  style="padding-top: 100px;">
@@ -270,7 +289,7 @@ $b="jff";
             <input type="text" class="form-control" name="sboard" id="name-l" placeholder=" Examination Bord" style="font-size:15px;">
           </div>
           <div class="col-sm-6 form-group">
-            <label for="percent">percent:</label>
+            <label for="percent">Percent:</label>
             <input type="text" class="form-control" name="spercent" id="name-l" placeholder=" Percent" style="font-size:15px;">
           </div>
           <div class="col-sm-6 form-group">
@@ -306,7 +325,7 @@ $b="jff";
             <input type="text" class="form-control" name="hsboard" id="name-l" placeholder=" Examination Bord"  style="font-size:15px;">
           </div>
           <div class="col-sm-6 form-group">
-            <label for="percent">percent:</label>
+            <label for="percent">Percent:</label>
             <input type="text" class="form-control" name="hspercent" id="name-l" placeholder=" Percent" style="font-size:15px;" >
           </div>
           <div class="col-sm-6 form-group">
@@ -332,7 +351,7 @@ $b="jff";
           </div>
 
             <div class="col-sm-6 form-group">
-            <label for="univercity name">Univercity Name:</label>
+            <label for="univercity name">University Name:</label>
             <input type="text" class="form-control" name="gname" id="name-f" placeholder="  Univercity Name" style="font-size:15px;"><br>
           </div>
           <div class="col-sm-6 form-group">
@@ -366,7 +385,7 @@ $b="jff";
           </div>
 
            <div class="col-sm-6 form-group">
-            <label for="univercity name">Univercity Name:</label>
+            <label for="univercity name">University Name:</label>
             <input type="text" class="form-control" name="pgname" id="name-f" placeholder="Univercity Name" style="font-size:15px;"><br>
           </div>
           <div class="col-sm-6 form-group">
@@ -398,7 +417,7 @@ $b="jff";
           </div>
 
            <div class="col-sm-6 form-group">
-            <label for="univercity name">Univercity Name:</label>
+            <label for="univercity name">University Name:</label>
             <input type="text" class="form-control" name="oname" id="name-f" placeholder=" Univercity Name"style="font-size:15px;" ><br>
           </div>
           <div class="col-sm-6 form-group">
@@ -419,7 +438,7 @@ $b="jff";
             <input type="file" class="form-control" name="file5" id="name-l" placeholder=" Document"  style="font-size:15px;">
           </div>
           <div class="col-sm-6 form-group">
-        <label for="payment">PAYMENT</label>
+        <label for="payment">Payment</label>
         <select input type="text" class="form-control" name="bloodgroup" id="address-1" placeholder=" Blood Group" required style="font-size:15px;">
         <option value="manually">Manually</option>
         <option value="cash">Cash</option>

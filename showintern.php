@@ -156,7 +156,7 @@ ORDER by uid DESC";
                  $row= mysqli_num_rows($rs);
                  echo '<h4 style="font-size:30px;text-align:center; color:white;" ><i class="icon_documents_alt"></i> '.$row.'</h4>';
          ?>
-         <h1 style="color:white;font-size:200%; text-align:center">since 7 days </h1>
+         <h1 style="color:white;font-size:200%; text-align:center">Since 7 days </h1>
           </div>
           <!--/.info-box-->
         </div>
@@ -177,7 +177,7 @@ ORDER by uid DESC";
                  $row= mysqli_num_rows($rs);
                  echo '<h4 style="font-size:30px;text-align:center; color:white;" ><i class="icon_documents_alt"></i> '.$row.'</h4>';
          ?>
-<h2 style="color:white;font-size:200%; text-align:center">since 15 days </h2>
+<h2 style="color:white;font-size:200%; text-align:center">Since 15 days </h2>
           </div>
           <!--/.info-box-->
         </div>
@@ -197,7 +197,7 @@ ORDER by uid DESC";
                  $row= mysqli_num_rows($rs);
                  echo '<h4 style="font-size:30px;text-align:center;" > <i class="icon_documents_alt" style="color:#1a1a1a"></i>'.$row.'</h4>';
          ?>
-         <h1 style="color:black;font-size:200%; text-align:center">since 30 days </h1>
+         <h1 style="color:black;font-size:200%; text-align:center">Since 30 days </h1>
           </div>
           <!--/.info-box-->
         </div>
@@ -298,9 +298,10 @@ if(mysqli_num_rows($rs)>0)
     
 <?php
 $i=101;
-$a="DS/IN/".$i;
   while($row=mysqli_fetch_array($rs))
   {
+    $a="DS/IN/".$i;
+
     ?>
     <tbody>
     <tr>

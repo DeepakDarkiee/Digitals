@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 08, 2021 at 01:02 PM
+-- Generation Time: Jan 18, 2021 at 10:41 AM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 
@@ -40,7 +40,7 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`id`, `email`, `password`, `otp`, `is_varify`) VALUES
-(1, 'nidhikhede4july@gmail.com', 'Digitals2021', 7643, 1);
+(1, 'ak3939651@gmail.com', '123', 6149, 1);
 
 -- --------------------------------------------------------
 
@@ -58,6 +58,13 @@ CREATE TABLE `companydetail` (
   `relationships` varchar(50) DEFAULT NULL,
   `belongs_department` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `companydetail`
+--
+
+INSERT INTO `companydetail` (`id`, `compname`, `designation`, `cont_num`, `Email`, `gotdetails`, `relationships`, `belongs_department`) VALUES
+(1, 'it', 'sefdt', 1234567891, 'poonam@gmail.com', 'no', 'none', 'CS');
 
 -- --------------------------------------------------------
 
@@ -94,6 +101,13 @@ CREATE TABLE `empeducationdetail` (
   `other_marksheet` varchar(200) DEFAULT NULL,
   `education_break` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `empeducationdetail`
+--
+
+INSERT INTO `empeducationdetail` (`id`, `school_name`, `board`, `percent`, `passing_year`, `school_marksheet`, `hschool_name`, `hsboard`, `passing_hyear`, `hpercent`, `hschool_marksheet`, `univercity`, `degree`, `gpercent`, `year`, `g_marksheet`, `pgdegree`, `pgunivercity`, `pgyear`, `pgpercent`, `pg_marksheet`, `otherdegree`, `otherunivercity`, `otheryear`, `otherpercent`, `other_marksheet`, `education_break`) VALUES
+(1, '', '', '', 0, 'image/', '', '', 0, '', 'image/', '', '', '', '', 'image/', '', '', 0, '', 'image/', '', '', 0, '', 'image/', '');
 
 -- --------------------------------------------------------
 
@@ -133,6 +147,13 @@ CREATE TABLE `emp_attendance` (
   `attend` varchar(255) NOT NULL,
   `att_time` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `emp_attendance`
+--
+
+INSERT INTO `emp_attendance` (`id`, `attend`, `att_time`) VALUES
+(1, 'absent', '2021-01-18');
 
 -- --------------------------------------------------------
 
@@ -196,6 +217,18 @@ CREATE TABLE `internprofessionaldetail` (
   `other_marksheet` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `internprofessionaldetail`
+--
+
+INSERT INTO `internprofessionaldetail` (`uid`, `school_name`, `board`, `percent`, `passing_year`, `school_marksheet`, `hschool_name`, `hsboard`, `passing_hyear`, `hpercent`, `hschool_marksheet`, `univercity`, `degree`, `gpercent`, `year`, `g_marksheet`, `pgdegree`, `pgunivercity`, `pgyear`, `pgpercent`, `pg_marksheet`, `otherdegree`, `otherunivercity`, `otheryear`, `otherpercent`, `other_marksheet`) VALUES
+(1, '', '', '', 0, 'image/', '', '', 0, '', 'image/', '', '', '', '', 'image/', '', '', 0, '', 'image/', '', '', 0, '', 'image/'),
+(2, '', '', '', 0, 'image/', '', '', 0, '', 'image/', '', '', '', '', 'image/', '', '', 0, '', 'image/', '', '', 0, '', 'image/'),
+(3, '', '', '', 0, 'image/', '', '', 0, '', 'image/', '', '', '', '', 'image/', '', '', 0, '', 'image/', '', '', 0, '', 'image/'),
+(4, 'agoshdeep', '10th mp board', '', 0, 'image/', '', '', 0, '', 'image/', '', '', '', '', 'image/', '', '', 0, '', 'image/', '', '', 0, '', 'image/'),
+(5, 'goverment ', '10th mp board', '86%', 2015, 'image/', '', '', 0, '', 'image/', '', '', '', '', 'image/', '', '', 0, '', 'image/', '', '', 0, '', 'image/'),
+(6, 'goverment ', '10th mp board', '86%', 2015, 'image/', '', '', 0, '', 'image/', '', '', '', '', 'image/', '', '', 0, '', 'image/', '', '', 0, '', 'image/');
+
 -- --------------------------------------------------------
 
 --
@@ -207,6 +240,15 @@ CREATE TABLE `intern_attendance` (
   `attend` varchar(255) NOT NULL,
   `att_time` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `intern_attendance`
+--
+
+INSERT INTO `intern_attendance` (`uid`, `attend`, `att_time`) VALUES
+(1, 'present', '2021-01-18'),
+(2, 'absent', '2021-01-18'),
+(6, 'absent', '2021-01-18');
 
 -- --------------------------------------------------------
 
@@ -220,6 +262,13 @@ CREATE TABLE `skill` (
   `position` varchar(40) NOT NULL,
   `experience` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `skill`
+--
+
+INSERT INTO `skill` (`id`, `skill`, `position`, `experience`) VALUES
+(1, 'abc,ski1,,', 'Beginner,', '0-1 month,');
 
 -- --------------------------------------------------------
 
@@ -248,6 +297,13 @@ CREATE TABLE `staff_attendance` (
   `att_time` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `staff_attendance`
+--
+
+INSERT INTO `staff_attendance` (`sid`, `attend`, `att_time`) VALUES
+(1, 'present', '2021-01-18');
+
 -- --------------------------------------------------------
 
 --
@@ -259,6 +315,14 @@ CREATE TABLE `traine_attendance` (
   `attend` varchar(255) NOT NULL,
   `att_time` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `traine_attendance`
+--
+
+INSERT INTO `traine_attendance` (`Tid`, `attend`, `att_time`) VALUES
+(1, 'absent', '2021-01-18'),
+(2, 'absent', '2021-01-18');
 
 -- --------------------------------------------------------
 
@@ -322,6 +386,14 @@ CREATE TABLE `tranprofessionaldetail` (
   `other_marksheet` varchar(200) DEFAULT NULL,
   `payment` bigint(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tranprofessionaldetail`
+--
+
+INSERT INTO `tranprofessionaldetail` (`Tid`, `school_name`, `board`, `percent`, `passing_year`, `school_marksheet`, `hschool_name`, `hsboard`, `passing_hyear`, `hpercent`, `hschool_marksheet`, `univercity`, `degree`, `gpercent`, `year`, `g_marksheet`, `pgdegree`, `pgunivercity`, `pgyear`, `pgpercent`, `pg_marksheet`, `otherdegree`, `otherunivercity`, `otheryear`, `otherpercent`, `other_marksheet`, `payment`) VALUES
+(1, '', '', '', 0, 'image/', '', '', 0, '', 'image/', '', '', '', '', 'image/', '', '', 0, '', 'image/', '', '', 0, '', 'image/', 0),
+(2, '', '', '', 0, 'image/', '', '', 0, '', 'image/', '', '', '', '', 'image/', '', '', 0, '', 'image/', '', '', 0, '', 'image/', 0);
 
 --
 -- Indexes for dumped tables
@@ -430,73 +502,73 @@ ALTER TABLE `account`
 -- AUTO_INCREMENT for table `companydetail`
 --
 ALTER TABLE `companydetail`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `empeducationdetail`
 --
 ALTER TABLE `empeducationdetail`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `emppersonaldetail`
 --
 ALTER TABLE `emppersonaldetail`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `internpersnoldetail`
 --
 ALTER TABLE `internpersnoldetail`
-  MODIFY `uid` int(40) NOT NULL AUTO_INCREMENT;
+  MODIFY `uid` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `internprofessionaldetail`
 --
 ALTER TABLE `internprofessionaldetail`
-  MODIFY `uid` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `uid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `intern_attendance`
 --
 ALTER TABLE `intern_attendance`
-  MODIFY `uid` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `uid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `skill`
 --
 ALTER TABLE `skill`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `staffpersonaldetail`
 --
 ALTER TABLE `staffpersonaldetail`
-  MODIFY `sid` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `sid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `staff_attendance`
 --
 ALTER TABLE `staff_attendance`
-  MODIFY `sid` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `sid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `traine_attendance`
 --
 ALTER TABLE `traine_attendance`
-  MODIFY `Tid` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `Tid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tranpersonaldetail`
 --
 ALTER TABLE `tranpersonaldetail`
-  MODIFY `Tid` int(40) NOT NULL AUTO_INCREMENT;
+  MODIFY `Tid` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tranprofessionaldetail`
 --
 ALTER TABLE `tranprofessionaldetail`
-  MODIFY `Tid` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `Tid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

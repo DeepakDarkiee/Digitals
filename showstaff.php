@@ -224,9 +224,10 @@ if(mysqli_num_rows($rs)>0)
     
 <?php
 $i=101;
-$a="DS/ST/".$i;
+
   while($row=mysqli_fetch_array($rs))
   {
+    $a="DS/ST/".$i;
     ?>
     <tbody>
     <tr>

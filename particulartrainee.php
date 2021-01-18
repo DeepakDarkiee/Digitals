@@ -234,7 +234,7 @@ if(isset($_POST["btnsearch"]))
   
 extract($_POST);
 $sql="SELECT * FROM traine_attendance where Tid=$id";
-$r=readrecord($qry);
+$r=readrecord($sql);
 }
 $get=mysqli_num_rows($r);
 

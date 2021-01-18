@@ -117,16 +117,17 @@ $rs=readrecord($query);
 						<tr>
 							<th width="25%"><h1>S/L</h1></th>
 							<th width="25%"><h1>Staff Name</h1></th>
-							<th width="25%"><h1>ID<h1></th>
+						
 							<th width="25%"><h1>Attendance</h1></th>
 						</tr>
 						<?php
-						$i=1;
+						$i=101;
 						while($row=mysqli_fetch_array($rs))
 						{
+              $a="DS/ST/".$i;
 						?>
 <tr>
-<td><h1><?php echo $i;?></h1></td>
+<td><h1><?php echo $a;?></h1></td>
 <?php 
 $id=$row['sid'];
 $sql="SELECT name FROM staffpersonaldetail WHERE sid=$id";
@@ -134,7 +135,7 @@ $r=readrecord($sql);
 $get_name=mysqli_fetch_array($r);
 ?>
 <td><h1><?php echo $get_name['name'];?></h1></td>
-	<td><h1><?php echo $row['sid'];?></h1></td>
+	
 	<td><h1>
 		<input type="radio" name="attend[<?php echo $row['sid'];?>]"  value="present" <?php if($row['attend'] == "present") {echo "checked";} ?>>P
 		<input type="radio" name="attend[<?php echo $row['sid'];?>]" value="absent" <?php if($row['attend'] == "absent") {echo "checked";} ?>>A

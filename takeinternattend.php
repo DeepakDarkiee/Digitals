@@ -10,6 +10,14 @@ header("location:index.php");
 <html lang="en">
 
 <head>
+
+<script src="sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="sweetalert2.min.js"></script>
+<link rel="stylesheet" href="sweetalert2.min.css">
+
+
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
@@ -39,6 +47,9 @@ header("location:index.php");
   <link href="css/style-responsive.css" rel="stylesheet" />
   <link href="css/xcharts.min.css" rel=" stylesheet">
   <link href="css/jquery-ui-1.10.4.min.css" rel="stylesheet">
+  <style>
+
+  </style>
 </head>
 
 <body>
@@ -61,17 +72,14 @@ include 'base.php';
         </div>
         <!--/.row-->
 
-        
-
-<?php 
-	include "include/header.php"; 
-?>
-
+        <?php 
+	include "include/header.php"; ?>
 <div class="container">
 <div class='alert alert-danger' style="display: none;"><strong>Error !</strong> Student Roll Missing !</div>
 		<div class="card">
 			<div class="card-header">
-			<?php
+				<h2>
+        <?php
 			$date=date("y-m-d");
 			$status="";
 			if(isset($_POST["submit"]))
@@ -82,14 +90,35 @@ include 'base.php';
 
 				$qry="insert into intern_attendance (uid,attend,att_time) VALUES('$atn_key','$atn_value','$date')"; 
 				$rs=readrecord($qry);
-				
+        
+        if($rs)
+        {
+          ?>
+ <script type='text/javascript'>
+    Swal.fire('<h1>Attandance Successfully submitted</h1>');
+    </script>
+          <?php
+        }
+        else{
+          ?>
+        <script type='text/javascript'>
+            Swal.fire('<h5>Wrong Password</h5>');
+            </script>
+            <?php
+        }
 				}
       }
-      $results_per_page = 6;
+      ?>
+
+
+
+      <?php
+			$results_per_page = 6;  
+
 			$qry="SELECT * FROM internpersnoldetail";
 			$rs=readrecord($qry);
-      $fetch=mysqli_num_rows($rs);
-      $number_of_page = ceil ($fetch/ $results_per_page);
+			$fetch=mysqli_num_rows($rs);
+			$number_of_page = ceil ($fetch/ $results_per_page);
 			if (!isset ($_GET['page']) ) {  
 				$page = 1; 
 		 
@@ -102,10 +131,9 @@ include 'base.php';
 			$rs=readrecord($query);
 
 			?>
-		
-                
-				<h1>	<a class="btn btn-info float-right" href="interndate_view.php"><h1>View All</h1></a>
-	
+				
+					<a class="btn btn-info float-right" href="interndate_view.php"><h1>View All</h1></a>
+				</h2>
 			</div>
 
 			<div class="card-body">
@@ -115,16 +143,16 @@ include 'base.php';
 				<form action="" method="post">
 					<table class="table table-striped">
 						<tr>
-							<th width="25%"><h1>ID</h1></th>
-							<th width="25%"><h1>Intern Name</h1></th>
-					
+							<th width="25%"><h1>ID<h1></th>
+							<th width="25%"><h1>Intern Name<h1></th>
+						
 							<th width="25%"><h1>Attendance</h1></th>
 						</tr>
 						<?php
             $i=101;
-            $a="DS/IN/".$i;
 						while($row=mysqli_fetch_array($rs))
 						{
+              $a="DS/IN/".$i;
 
 						?>
 						<tr>
@@ -143,7 +171,7 @@ $i++;
 						?>
 						<tr>
 							<td colspan="4" class="text-center">
-								<input type="submit" name="submit" class="btn btn-primary px-5" value="Submit" style="height:50px;font-size:20px;">
+								<input type="submit" name="submit" class="btn btn-primary px-5" value="Submit" style="height:35px;font-size:15px;">
 							</td>
 						</tr>
 					</table>
@@ -151,15 +179,15 @@ $i++;
         <?php
 				 echo '<ul class="pagination">';
 				 if($page>=2){   
-					echo " <li class='page-item' style='border:none;'> <a  class='page-link' href='takeinternattend.php?page=".($page-1)."'> <h1> Prev </h1></a></li>";   
+					echo " <li class='page-item'> <a  class='page-link' style='border:none;' href='takeinternattend.php?page=".($page-1)."'> <h1> Prev </h1></a></li>";   
 				}
 				for($i = 1; $i<= $number_of_page; $i++) {  
-        echo '<li class="page-item"> <a class="page-link" href = "takeinternattend.php?page=' . $i . '"><h1>' . $i . ' </h1></a></li>';  
+        echo '<li class="page-item"> <a class="page-link" href = "takeinternattend.php?page=' . $i . '"><h1 style=>' . $i . ' </h1></a></li>';  
 	}
 	
 	if($page<$number_of_page){ 
   
-		echo "<li class='page-item' style='border:none;'><a  class='page-link' style='border:1px;' href='takeempattend.php?page=".($page+1)."'> <h1> Next </h1></a></li>";   
+		echo "<li class='page-item' style='border:none;'><a  class='page-link' style='border:none;' href='takeinternattend.php?page=".($page+1)."'> <h1> Next </h1></a></li>";   
 	}   
 	echo "</ul>"
 

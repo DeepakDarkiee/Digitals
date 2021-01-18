@@ -1,13 +1,13 @@
 <?php
 function getconnect()
 {
-$con=mysqli_connect("localhost","dsmiecom_group","dsmie@group@","dsmiecom_group");
+$con=mysqli_connect("localhost","dsmiecom_group","dsmie@group","dsmiecom_group");
 return $con;
 }
 function executequery($qry)
 {
 $status="";
-$con=mysqli_connect("localhost","dsmiecom_group","dsmie@group@","dsmiecom_group");
+$con=mysqli_connect("localhost","dsmiecom_group","dsmie@group","dsmiecom_group");
 $rs=mysqli_query($con,$qry);
 if(!$rs)
 {

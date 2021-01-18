@@ -10,6 +10,14 @@ header("location:index.php");
 <html lang="en">
 
 <head>
+
+<script src="sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="sweetalert2.min.js"></script>
+<link rel="stylesheet" href="sweetalert2.min.css">
+
+
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
@@ -82,9 +90,28 @@ include 'base.php';
 
 				$qry="insert into emp_attendance (id,attend,att_time) VALUES('$atn_key','$atn_value','$date')"; 
 				$rs=readrecord($qry);
-				
+			  if($rs)
+        {
+          ?>
+ <script type='text/javascript'>
+    Swal.fire('<h1>Attendance Successfully submitted</h1>');
+    </script>
+          <?php
+        }
+        else{
+          ?>
+        <script type='text/javascript'>
+            Swal.fire('<h5>Wrong Password</h5>');
+            </script>
+            <?php
+        }
 				}
-			}
+      }
+      ?>
+
+
+
+      <?php
 			$results_per_page = 6;  
 
 			$qry="SELECT * FROM emppersonaldetail";
@@ -122,10 +149,10 @@ include 'base.php';
 						</tr>
 						<?php
             $i=101;
-            $a="DS/EMP/".$i;
+           
 						while($row=mysqli_fetch_array($rs))
 						{
-
+              $a="DS/EMP/".$i;
 						?>
 						<tr>
 						<td><h1><?php echo $a;?></h1></td>
